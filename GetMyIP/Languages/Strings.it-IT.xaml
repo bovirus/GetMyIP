@@ -14,7 +14,7 @@
 
         Translation contributed by:  RB
 
-        Date last updated:           24.08.2026
+        Date last updated:           06.09.2026
 
         =======================================================================
 
@@ -151,6 +151,7 @@
     <sys:String x:Key="MsgText_Error_FileNotFound">Nome file mancante o file non trovato.</sys:String>
     <sys:String x:Key="MsgText_Error_ImportingSettings">Errore durante l'importazione del file delle impostazioni.</sys:String>
     <sys:String x:Key="MsgText_Error_InternetNotFound">Non è disponibile una connessione internet.</sys:String>
+    <sys:String x:Key="MsgText_Error_InvalidRefreshInterval">L'intervallo aggiornamento deve essere compreso tra {0} e {1}.</sys:String>
     <sys:String x:Key="MsgText_Error_InvalidURL">L'URL usata per ottenere info sull'IP esterno non è valida.</sys:String>
     <sys:String x:Key="MsgText_Error_IPv6Received">Indirizzo IPv6 ({0}) ricevuto mentre l'opzione di nuovo tentativo IPv6 è abilitata.</sys:String>
     <sys:String x:Key="MsgText_Error_IPv6RetryMaxLine1">È stato raggiunto il numero massimo di tentativi IPv6 ({0}).</sys:String>
@@ -187,6 +188,7 @@
     <sys:String x:Key="MsgText_PeriodicRefreshStopped">Aggiornamento periodico stoppato</sys:String>
     <sys:String x:Key="MsgText_PeriodicRefreshEnabled">Aggiornamento periodico abilitato</sys:String>
     <sys:String x:Key="MsgText_Refreshed">Aggiornato</sys:String>
+    <sys:String x:Key="MsgText_RefreshIntervalReverted">Iintervallo aggiornamento ripristinato al valore predefinito</sys:String>
     <sys:String x:Key="MsgText_RetryAttempt">Nuovo tentativo tra {0} secondi. ({1} di {2})</sys:String>
     <sys:String x:Key="MsgText_TooltipBytes">byte</sys:String>
     <sys:String x:Key="MsgText_TooltipLastUpdate">Aggiornato:</sys:String>
@@ -268,6 +270,9 @@
     <sys:String x:Key="SettingsItem_PublicInfoProviderTooltipLine3">freeipapi.com fornisce alcuni dettagli diversi</sys:String>
     <sys:String x:Key="SettingsItem_PublicInfoProviderTooltipLine4">ip2location.io fornisce alcuni dettagli diversi</sys:String>
     <sys:String x:Key="SettingsItem_RefreshInterval">Intervallo aggiornamento</sys:String>
+    <sys:String x:Key="SettingsItem_RefreshIntervalHoursSuffix">o</sys:String>
+    <sys:String x:Key="SettingsItem_RefreshIntervalMinutesSuffix">m</sys:String>
+    <sys:String x:Key="SettingsItem_RefreshIntervalSecondsSuffix">s</sys:String>
     <sys:String x:Key="SettingsItem_RefreshRestoredWindow">Aggiorna info IP quando viene ripristinata la finestra ridotta a icona</sys:String>
     <sys:String x:Key="SettingsItem_RestoreToCenter">Ripristina finestra ridotta al centro dello schermo</sys:String>
     <sys:String x:Key="SettingsItem_RestoreToInitialPage">Ripristina finestra minimizzata nella pagina iniziale</sys:String>
@@ -301,6 +306,7 @@
     <sys:String x:Key="SettingsItem_StartupDelayTooltip">Numero di secondi di attesa dopo l'avvio dell'app prima di recuperare le informazioni IP. Un valore zero significa nessun ritardo. 600 è il valore massimo.</sys:String>
     <sys:String x:Key="SettingsItem_StartWithWindows">Esegui all'avvio di Windows</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Tema</sys:String>
+    <sys:String x:Key="SettingsItem_TimeSpinnerToolTipLine1">Seleziona un intervallo aggiornamento tra 00:00:10 e 23:59:59</sys:String>
     <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Rappresenta il numero di stringhe nella lingua attuale rispetto a quella predefinita (en-US).</sys:String>
     <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Premi Ctrl+Maiusc+K per confrontare i file lingua. I risultati verranno scritti nel file registro.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Dimensione UI</sys:String>
@@ -341,20 +347,6 @@
     <sys:String x:Key="SettingsEnum_Provider_Ip2Location">ip2location.io</sys:String>
     <sys:String x:Key="SettingsEnum_Provider_IpApiCom">ip-api.com</sys:String>
     <sys:String x:Key="SettingsEnum_Provider_SeeIp">seeip.org</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_1Minute">1 minuto</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_3Minutes">3 minuti</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_5Minutes">5 minuti</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_10Minutes">10 minuti</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_15Minutes">15 minuti</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_30Minutes">30 minuti</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_1Hour">1 ora</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_2Hours">2 ore</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_3Hours">3 ore</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_4Hours">4 ore</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_6Hours">6 ore</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_8Hours">8 ore</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_12Hours">12 ore</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_24Hours">24 ore</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Default">100%</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Large">105%</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Larger">110%</sys:String>
@@ -675,4 +667,14 @@
     <!-- A | MsgText_PeriodicRefreshEnabled - Translate as "Periodic Refresh" or "Automatic Refresh",
                                               whichever is more appropriate in your local context -->
     <!-- End of changes on 2026/08/24 @ 00:00 UTC -->
+
+    <!-- Begin changes on 2026/09/05 @ 00:00 UTC -->
+    <!-- D | SettingsEnum_RefreshInterval_* range of (14) values removed - replaced by Hours/Minutes/Seconds time spinner controls -->
+    <!-- A | MsgText_Error_InvalidRefreshInterval -->
+    <!-- A | MsgText_RefreshIntervalReverted -->
+    <!-- A | SettingsItem_RefreshIntervalHoursSuffix -->
+    <!-- A | SettingsItem_RefreshIntervalMinutesSuffix -->
+    <!-- A | SettingsItem_RefreshIntervalSecondsSuffix -->
+    <!-- A | SettingsItem_TimeSpinnerToolTipLine1 -->
+    <!-- End of changes on 2026/09/05 @ 00:00 UTC -->
 </ResourceDictionary>
