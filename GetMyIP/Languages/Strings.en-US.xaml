@@ -285,6 +285,7 @@
     <sys:String x:Key="SettingsItem_ShowAsNumber">Show AS number</sys:String>
     <sys:String x:Key="SettingsItem_ShowCity">Show city</sys:String>
     <sys:String x:Key="SettingsItem_ShowCountry">Show country</sys:String>
+    <sys:String x:Key="SettingsItem_ShowCopyIcon">Show copy icon next to external and internal rows</sys:String>
     <sys:String x:Key="SettingsItem_ShowCustomHeader">Show custom header</sys:String>
     <sys:String x:Key="SettingsItem_ShowCustomHeaderHint">Custom header text</sys:String>
     <sys:String x:Key="SettingsItem_ShowExit">Show Exit in Navigation bar</sys:String>
@@ -677,4 +678,8 @@
     <!-- A | SettingsItem_RefreshIntervalSecondsSuffix -->
     <!-- A | SettingsItem_TimeSpinnerToolTipLine1 -->
     <!-- End of changes on 2026/09/05 @ 00:00 UTC -->
+    
+    <!-- Begin changes on 2026/09/07 @ 00:00 UTC -->
+    <!-- A | SettingsItem_ShowCopyIcon -->
+    <!-- End of changes on 2026/09/07 @ 00:00 UTC -->
 </ResourceDictionary>

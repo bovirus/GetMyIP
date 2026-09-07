@@ -17,6 +17,8 @@
     <!--#region Resources-->
     <UserControl.Resources>
         <convert:SpacingConverter x:Key="Spacing" />
+        <convert:BoolToVisibilityInverter x:Key="BoolToVisInverter" />
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
     </UserControl.Resources>
     <!--#endregion-->
 
@@ -41,7 +43,34 @@
                 <DataGridTextColumn Binding="{Binding Parameter}"
                                     Header="{DynamicResource ColumnHead_Parameter}" />
                 <DataGridTextColumn Binding="{Binding Value}"
-                                    Header="{DynamicResource ColumnHead_Value}" />
+                                    Header="{DynamicResource ColumnHead_Value}"
+                                    Visibility="{Binding ShowCopyIcon,
+                                                         Source={x:Static config:UserSettings.Setting},
+                                                         Converter={StaticResource BoolToVisInverter}}" />
+                <DataGridTemplateColumn Width="Auto"
+                                        Header="{DynamicResource ColumnHead_Value}"
+                                        Visibility="{Binding ShowCopyIcon,
+                                                             Source={x:Static config:UserSettings.Setting},
+                                                             Converter={StaticResource BoolToVisConverter}}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Value}" />
+                                <Button Click="CopyButton_Click"
+                                        Command="{Binding DataContext.CopyCellValueCommand,
+                                                          RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                                        CommandParameter="{Binding Value}"
+                                        Style="{StaticResource CopyToClipboardButton}"
+                                        Visibility="{Binding IsMouseOver,
+                                                             RelativeSource={RelativeSource AncestorType=DataGridRow},
+                                                             Converter={StaticResource BoolToVisConverter}}">
+                                    <materialDesign:PackIcon Width="16" Height="16"
+                                                             Kind="ContentCopy" />
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
