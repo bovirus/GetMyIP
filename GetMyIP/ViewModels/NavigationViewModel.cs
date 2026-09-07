@@ -373,43 +373,6 @@ internal sealed partial class NavigationViewModel : ObservableObject
     }
     #endregion Stop refresh timers
 
-    #region Right mouse button
-    /// <summary>
-    /// Copy (nearly) any text in a TextBlock to the clipboard on right mouse button up.
-    /// </summary>
-    [RelayCommand]
-    private static async Task RightMouseUp(MouseButtonEventArgs e)
-    {
-        if (e.OriginalSource is not TextBlock text)
-        {
-            return;
-        }
-
-        try
-        {
-            if (await ClipboardHelper.CopyTextToClipboardAsync(text.Text))
-            {
-                SnackBarMsg.ClearAndQueueMessage(GetStringResource("MsgText_CopiedToClipboard"));
-                _log.Debug($"{text.Text.Length} bytes copied to the clipboard");
-            }
-            else
-            {
-                _log.Error("RightMouseUp clipboard copy failed.");
-                SnackBarMsg.ClearAndQueueMessage(GetStringResource("MsgText_CopyToClipboardFail"));
-            }
-
-            DataGridRow dgr = MainWindowHelpers.FindParent<DataGridRow>(text);
-            dgr.IsSelected = false;
-            DataGrid dg = MainWindowHelpers.FindParent<DataGrid>(dgr);
-            dg.Items.Refresh();
-        }
-        catch (Exception ex)
-        {
-            _log.Error(ex, $"Right-click event handler failed. {ex.Message}");
-        }
-    }
-    #endregion Right mouse button
-
     #region Key down events
     /// <summary>
     /// Keyboard events
@@ -417,6 +380,7 @@ internal sealed partial class NavigationViewModel : ObservableObject
     [RelayCommand]
     private static async Task KeyDown(KeyEventArgs e)
     {
+
         // The case statements are in order by modifier keys (none, alt, control, control+shift), then key.
         // The underscore (_) is a discard for the value that is not needed.
         switch ((e.KeyboardDevice.Modifiers, e.Key, e.SystemKey))
@@ -427,6 +391,10 @@ internal sealed partial class NavigationViewModel : ObservableObject
 
             case (ModifierKeys.None, Key.F5, _):
                 _ = RefreshIpInfo();
+                break;
+
+            case (ModifierKeys.None, Key.Escape, _):
+                e.Handled = true;
                 break;
 
             case (ModifierKeys.Alt, _, Key.F4):
@@ -628,4 +596,37 @@ internal sealed partial class NavigationViewModel : ObservableObject
         }
     }
     #endregion Show snack bar message for UI changes
+
+    #region Copy DataGrid cell value
+    /// <summary>
+    /// Copy a DataGrid cell value to clipboard.
+    /// </summary>
+    [RelayCommand]
+    public static async Task CopyCellValue(string? text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            return;
+        }
+
+        try
+        {
+            if (await ClipboardHelper.CopyTextToClipboardAsync(text))
+            {
+                _log.Debug($"{text.Length} characters copied to the clipboard");
+                SnackBarMsg.ClearAndQueueMessage(GetStringResource("MsgText_CopiedToClipboard"));
+            }
+            else
+            {
+                _log.Error("CopyCellValue clipboard copy failed.");
+                SnackBarMsg.ClearAndQueueMessage(GetStringResource("MsgText_CopyToClipboardFail"));
+            }
+        }
+        catch (Exception ex)
+        {
+            _log.Error(ex, $"CopyCellValue command failed. {ex.Message}");
+            SnackBarMsg.ClearAndQueueMessage(GetStringResource("MsgText_CopyToClipboardFail"));
+        }
+    }
+    #endregion Copy DataGrid cell value
 }

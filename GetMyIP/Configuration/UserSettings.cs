@@ -21,8 +21,11 @@ public partial class UserSettings : ConfigManager<UserSettings>
     [ObservableProperty]
     private bool _autoRefresh;
 
+    /// <summary>
+    /// The interval, in seconds, for periodic refresh.
+    /// </summary>
     [ObservableProperty]
-    private int _autoRefreshSeconds = TimeSpan.FromHours(1).Seconds;
+    private int _autoRefreshSeconds = 3600;
 
     /// <summary>
     ///  Used to determine if Debug level messages are included in the application log.
@@ -210,6 +213,12 @@ public partial class UserSettings : ConfigManager<UserSettings>
     /// </summary>
     [ObservableProperty]
     private bool _showCity;
+
+    /// <summary>
+    /// Option to show Copy Icon in cell.
+    /// </summary>
+    [ObservableProperty]
+    private bool _showCopyIcon;
 
     /// <summary>
     /// Option to show Country in results.
