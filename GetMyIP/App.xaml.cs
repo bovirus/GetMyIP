@@ -138,7 +138,7 @@ public partial class App : Application
         }
 
         // If a language is defined in settings, and it exists in the list of defined languages, set the current culture and language to it.
-        if (!string.IsNullOrEmpty(UserSettings.Setting!.UILanguage) &&
+        if (!string.IsNullOrEmpty(UserSettings.Setting.UILanguage) &&
             UILanguage.DefinedLanguages.Exists(x => x.LanguageCode == UserSettings.Setting.UILanguage))
         {
             try
@@ -171,7 +171,7 @@ public partial class App : Application
     private void CheckLanguageTesting()
     {
         // Language testing
-        if (UserSettings.Setting!.LanguageTesting)
+        if (UserSettings.Setting.LanguageTesting)
         {
             _log.Info("Language testing enabled");
             ResourceDictionary testDict = [];

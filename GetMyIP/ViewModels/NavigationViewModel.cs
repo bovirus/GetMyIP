@@ -11,7 +11,7 @@ internal sealed partial class NavigationViewModel : ObservableObject
 
         if (CurrentViewModel is null)
         {
-            Navigate(FindNavPage(UserSettings.Setting!.InitialPage));
+            Navigate(FindNavPage(UserSettings.Setting.InitialPage));
         }
     }
     #endregion Constructor
@@ -106,7 +106,7 @@ internal sealed partial class NavigationViewModel : ObservableObject
                 CurrentViewModel = null;
                 CurrentViewModel = Activator.CreateInstance((Type)item.ViewModelType);
                 NavItem = item;
-                TempSettings.Setting!.CurrentPage = item.NavPage.ToString();
+                TempSettings.Setting.CurrentPage = item.NavPage.ToString();
             }
         }
     }
@@ -369,7 +369,7 @@ internal sealed partial class NavigationViewModel : ObservableObject
     private static void StopRefresh()
     {
         RefreshHelpers.StopTimer();
-        UserSettings.Setting!.AutoRefresh = false;
+        UserSettings.Setting.AutoRefresh = false;
     }
     #endregion Stop refresh timers
 
@@ -492,7 +492,7 @@ internal sealed partial class NavigationViewModel : ObservableObject
 
     private static void DecreaseFontSize()
     {
-        if (UserSettings.Setting!.SelectedFontSize > 8)
+        if (UserSettings.Setting.SelectedFontSize > 8)
         {
             UserSettings.Setting.SelectedFontSize--;
         }
@@ -501,7 +501,7 @@ internal sealed partial class NavigationViewModel : ObservableObject
 
     private static void IncreaseFontSize()
     {
-        if (UserSettings.Setting!.SelectedFontSize < 24)
+        if (UserSettings.Setting.SelectedFontSize < 24)
         {
             UserSettings.Setting.SelectedFontSize++;
         }
@@ -510,7 +510,7 @@ internal sealed partial class NavigationViewModel : ObservableObject
 
     private static void CycleProviders()
     {
-        if (UserSettings.Setting!.InfoProvider >= PublicInfoProvider.IP2Location)
+        if (UserSettings.Setting.InfoProvider >= PublicInfoProvider.IP2Location)
         {
             UserSettings.Setting.InfoProvider = PublicInfoProvider.IpApiCom;
         }
@@ -535,7 +535,7 @@ internal sealed partial class NavigationViewModel : ObservableObject
 
     private static void CycleColor()
     {
-        if (UserSettings.Setting!.PrimaryColor >= AccentColor.White)
+        if (UserSettings.Setting.PrimaryColor >= AccentColor.White)
         {
             UserSettings.Setting.PrimaryColor = AccentColor.Red;
         }
@@ -548,7 +548,7 @@ internal sealed partial class NavigationViewModel : ObservableObject
 
     private static void CycleTheme()
     {
-        UserSettings.Setting!.UITheme = UserSettings.Setting.UITheme switch
+        UserSettings.Setting.UITheme = UserSettings.Setting.UITheme switch
         {
             ThemeType.Light => ThemeType.LightGray,
             ThemeType.LightGray => ThemeType.Dark,
@@ -573,19 +573,19 @@ internal sealed partial class NavigationViewModel : ObservableObject
         {
             case "size":
                 composite = MsgTextUISizeSet;
-                messageVar = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UISize);
+                messageVar = EnumDescConverter.GetEnumDescription(UserSettings.Setting.UISize);
                 break;
             case "theme":
                 composite = MsgTextUIThemeSet;
-                messageVar = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.UITheme);
+                messageVar = EnumDescConverter.GetEnumDescription(UserSettings.Setting.UITheme);
                 break;
             case "color":
                 composite = MsgTextUIColorSet;
-                messageVar = EnumDescConverter.GetEnumDescription(UserSettings.Setting!.PrimaryColor);
+                messageVar = EnumDescConverter.GetEnumDescription(UserSettings.Setting.PrimaryColor);
                 break;
             case "fontSize":
                 composite = MsgTextFontSizeSet;
-                messageVar = UserSettings.Setting!.SelectedFontSize.ToString(CultureInfo.CurrentCulture);
+                messageVar = UserSettings.Setting.SelectedFontSize.ToString(CultureInfo.CurrentCulture);
                 break;
         }
 

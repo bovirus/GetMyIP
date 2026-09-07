@@ -29,7 +29,7 @@ internal static class TrayIconHelpers
         }
 
         string? countryCode = GetCountryCode();
-        if (UserSettings.Setting!.ShowFlagIcon)
+        if (UserSettings.Setting.ShowFlagIcon)
         {
             if (countryCode == CurrentCountryCode)
             {
