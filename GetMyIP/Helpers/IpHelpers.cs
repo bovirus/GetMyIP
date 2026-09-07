@@ -80,7 +80,7 @@ internal static class IpHelpers
 
         string ipv4Label = GetStringResource("Internal_IPv4Address");
         string ipv6Label = GetStringResource("Internal_IPv6Address");
-        bool obfuscate = UserSettings.Setting!.ObfuscateLog;
+        bool obfuscate = UserSettings.Setting.ObfuscateLog;
         bool includeV6 = UserSettings.Setting.IncludeV6;
         IPInfo.InternalList.Clear();
 
@@ -128,7 +128,7 @@ internal static class IpHelpers
         string url;
         bool canMap;
 
-        switch (UserSettings.Setting!.InfoProvider)
+        switch (UserSettings.Setting.InfoProvider)
         {
             case PublicInfoProvider.SeeIP:
                 url = AppConstString.SeeIpURL;
@@ -269,7 +269,7 @@ internal static class IpHelpers
     /// <returns>A tuple containing the maximum retry count and retry delay in seconds.</returns>
     private static (int MaxRetries, int DelaySeconds) GetRetrySettings()
     {
-        int maxRetries = Math.Clamp(UserSettings.Setting!.RetryMax, 1, 100);
+        int maxRetries = Math.Clamp(UserSettings.Setting.RetryMax, 1, 100);
         int delaySeconds = Math.Clamp(UserSettings.Setting.RetrySeconds, 10, 3600);
         return (maxRetries, delaySeconds);
     }
@@ -308,7 +308,7 @@ internal static class IpHelpers
             return (false, ipv6RetryCount, string.Empty);
         }
 
-        if (UserSettings.Setting!.RetryIfIpv6)
+        if (UserSettings.Setting.RetryIfIpv6)
         {
             string ipAddress = ExtractIpFromJson(LatestRawExternalJson);
 
@@ -483,7 +483,7 @@ internal static class IpHelpers
         TrayIconHelpers.ShowProblemIcon = true;
         TrayIconHelpers.SetTrayIcon();
 
-        int ipv6MaxRetries = Math.Clamp(UserSettings.Setting!.RetryIfIpv6Max, 1, 100);
+        int ipv6MaxRetries = Math.Clamp(UserSettings.Setting.RetryIfIpv6Max, 1, 100);
         int ipv6Delay = Math.Clamp(UserSettings.Setting.RetryIfIpv6Seconds, 2, 60);
 
         if (ipv6RetryCount >= ipv6MaxRetries)
@@ -613,7 +613,7 @@ internal static class IpHelpers
         if (!string.IsNullOrEmpty(returnedJson))
         {
             ClearGeoInfoList();
-            switch (UserSettings.Setting!.InfoProvider)
+            switch (UserSettings.Setting.InfoProvider)
             {
                 case PublicInfoProvider.IpApiCom:
                     ProcessJson<IpApiCom>(returnedJson, quiet, "SettingsEnum_Provider_IpApiCom");
@@ -808,7 +808,7 @@ internal static class IpHelpers
                     PropertyNameCaseInsensitive = true
                 };
 
-                switch (UserSettings.Setting!.InfoProvider)
+                switch (UserSettings.Setting.InfoProvider)
                 {
                     case PublicInfoProvider.IpApiCom:
                         LogIpApiComInfo(JsonSerializer.Deserialize<IpApiCom>(json, opts));
@@ -1014,7 +1014,7 @@ internal static class IpHelpers
                 PropertyNameCaseInsensitive = true
             };
 
-            switch (UserSettings.Setting!.InfoProvider)
+            switch (UserSettings.Setting.InfoProvider)
             {
                 case PublicInfoProvider.IpApiCom:
                     {
@@ -1077,7 +1077,7 @@ internal static class IpHelpers
     /// </summary>
     private static void ShowLastRefresh()
     {
-        if (UserSettings.Setting!.ShowLastRefresh)
+        if (UserSettings.Setting.ShowLastRefresh)
         {
             Application.Current.Dispatcher.Invoke(static () =>
             {
@@ -1119,7 +1119,7 @@ internal static class IpHelpers
             return;
         }
 
-        string providerName = UserSettings.Setting!.InfoProvider.ToString();
+        string providerName = UserSettings.Setting.InfoProvider.ToString();
 
         // Configure and show the SaveFileDialog
         SaveFileDialog saveFileDialog = new()

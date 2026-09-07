@@ -32,7 +32,7 @@ internal static class MainWindowHelpers
 
             IpHelpers.ProcessProvider(returnedJson, false);
 
-            EnableTrayIcon(UserSettings.Setting!.MinimizeToTray);
+            EnableTrayIcon(UserSettings.Setting.MinimizeToTray);
         }
         else
         {
@@ -53,7 +53,7 @@ internal static class MainWindowHelpers
     {
         // Ensure that the initial delay is between 0 and 600 seconds.
         // This will prevent the user from entering a negative number or a number greater than 10 minutes.
-        UserSettings.Setting!.InitialDelaySecs = Math.Min(Math.Max(UserSettings.Setting.InitialDelaySecs, 0), 600);
+        UserSettings.Setting.InitialDelaySecs = Math.Min(Math.Max(UserSettings.Setting.InitialDelaySecs, 0), 600);
 
         if (UserSettings.Setting.InitialDelaySecs > 0)
         {
@@ -104,7 +104,7 @@ internal static class MainWindowHelpers
         {
             return;
         }
-        _mainWindow.Height = UserSettings.Setting!.WindowHeight;
+        _mainWindow.Height = UserSettings.Setting.WindowHeight;
         _mainWindow.Left = UserSettings.Setting.WindowLeft;
         _mainWindow.Top = UserSettings.Setting.WindowTop;
         _mainWindow.Width = UserSettings.Setting.WindowWidth;
@@ -125,7 +125,7 @@ internal static class MainWindowHelpers
     private static void SaveWindowPosition()
     {
         Window? mainWindow = Application.Current.MainWindow;
-        UserSettings.Setting!.WindowHeight = Math.Floor(mainWindow!.Height);
+        UserSettings.Setting.WindowHeight = Math.Floor(mainWindow.Height);
         UserSettings.Setting.WindowLeft = Math.Floor(mainWindow.Left);
         UserSettings.Setting.WindowTop = Math.Floor(mainWindow.Top);
         UserSettings.Setting.WindowWidth = Math.Floor(mainWindow.Width);
@@ -182,7 +182,7 @@ internal static class MainWindowHelpers
             {
                 case WindowState.Minimized:
                     {
-                        if (UserSettings.Setting!.MinimizeToTray)
+                        if (UserSettings.Setting.MinimizeToTray)
                         {
                             _mainWindow.Hide();
                         }
@@ -195,7 +195,7 @@ internal static class MainWindowHelpers
                     {
                         if (PreviousState == WindowState.Minimized)
                         {
-                            if (UserSettings.Setting!.RefreshAfterRestore)
+                            if (UserSettings.Setting.RefreshAfterRestore)
                             {
                                 _log.Debug("Main window restored from minimized. Initiating a refresh.");
                                 await NavigationViewModel.RefreshExternalAsync();
@@ -207,7 +207,7 @@ internal static class MainWindowHelpers
                             }
                         }
 
-                        if (UserSettings.Setting!.StartCentered && UserSettings.Setting.RestoreToCenter)
+                        if (UserSettings.Setting.StartCentered && UserSettings.Setting.RestoreToCenter)
                         {
                             ScreenHelpers.CenterTheWindow(_mainWindow);
                             PreviousState = _mainWindow.WindowState;
@@ -240,7 +240,7 @@ internal static class MainWindowHelpers
     #region Loaded
     private static void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
-        if (UserSettings.Setting!.AutoRefresh)
+        if (UserSettings.Setting.AutoRefresh)
         {
             RefreshHelpers.StartTimer();
         }
@@ -343,8 +343,8 @@ internal static class MainWindowHelpers
         if (mode == ThemeType.System)
         {
             mode = GetSystemTheme().Equals("light", StringComparison.OrdinalIgnoreCase)
-                ? UserSettings.Setting!.SystemLightTheme
-                : UserSettings.Setting!.SystemDarkTheme;
+                ? UserSettings.Setting.SystemLightTheme
+                : UserSettings.Setting.SystemDarkTheme;
         }
 
         switch (mode)
@@ -473,7 +473,7 @@ internal static class MainWindowHelpers
     /// </summary>
     public static void EverythingSmaller()
     {
-        MySize size = UserSettings.Setting!.UISize;
+        MySize size = UserSettings.Setting.UISize;
         if (size > 0)
         {
             size--;
@@ -487,7 +487,7 @@ internal static class MainWindowHelpers
     /// </summary>
     public static void EverythingLarger()
     {
-        MySize size = UserSettings.Setting!.UISize;
+        MySize size = UserSettings.Setting.UISize;
         if (size < MySize.Largest)
         {
             size++;
@@ -526,7 +526,7 @@ internal static class MainWindowHelpers
     /// </summary>
     public static void ShowMainWindow()
     {
-        Application.Current.MainWindow!.Show();
+        Application.Current.MainWindow.Show();
         Application.Current.MainWindow.Visibility = Visibility.Visible;
         Application.Current.MainWindow.WindowState = WindowState.Normal;
         Application.Current.MainWindow.ShowInTaskbar = true;

@@ -17,7 +17,7 @@ internal static class NLogHelpers
 
     internal static string GetPermanentLogFilePath()
     {
-        return string.IsNullOrEmpty(UserSettings.Setting!.LogFile)
+        return string.IsNullOrEmpty(UserSettings.Setting.LogFile)
             ? Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "GetMyIP.log")
             : UserSettings.Setting.LogFile;
     }
@@ -104,7 +104,7 @@ internal static class NLogHelpers
         #endregion Debugger
 
         // Lastly, set the logging level based on setting
-        SetLogLevel(UserSettings.Setting!.IncludeDebug);
+        SetLogLevel(UserSettings.Setting.IncludeDebug);
     }
 
     /// <summary>

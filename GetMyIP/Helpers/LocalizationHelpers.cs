@@ -59,7 +59,7 @@ internal static class LocalizationHelpers
     /// <returns>True if the language is defined and the language exists. Otherwise return false.</returns>
     public static bool CheckUseOsLanguage(string language)
     {
-        if (UserSettings.Setting!.UseOSLanguage)
+        if (UserSettings.Setting.UseOSLanguage)
         {
             if (UILanguage.DefinedLanguages.Exists(x => x.LanguageCode == language))
             {

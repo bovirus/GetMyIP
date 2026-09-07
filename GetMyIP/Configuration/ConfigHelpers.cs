@@ -49,7 +49,7 @@ public static class ConfigHelpers
     /// </summary>
     private static void InitializeRefreshTime()
     {
-        TimeSpan timeSpan = TimeSpan.FromSeconds(UserSettings.Setting!.AutoRefreshSeconds);
+        TimeSpan timeSpan = TimeSpan.FromSeconds(UserSettings.Setting.AutoRefreshSeconds);
         UserSettings.Setting.RefreshHours = timeSpan.Hours;
         UserSettings.Setting.RefreshMinutes = timeSpan.Minutes;
         UserSettings.Setting.RefreshSeconds = timeSpan.Seconds;
@@ -83,12 +83,12 @@ public static class ConfigHelpers
 
     #region Migrate legacy refresh interval
     /// <summary>
-    /// Converts a settings file created before the AutoRefreshInterval enum was replaced
-    /// with separate Hours/Minutes/Seconds properties. The old value was persisted as the
-    /// total number of minutes (the underlying int value of the RefreshIntervals enum).
+    /// Converts a settings file created before the AutoRefreshInterval enum was replaced with separate
+    /// Hours/Minutes/Seconds properties. The old value was persisted as the total number of minutes (the underlying int
+    /// value of the RefreshIntervals enum).
     /// </summary>
-    /// <param name="json">The raw JSON text read from the settings file.</param>
     /// <param name="settings">The already-deserialized settings instance to update in place.</param>
+    /// <param name="json">The raw JSON text read from the settings file.</param>
     private static void MigrateLegacyRefreshInterval(UserSettings settings, string json)
     {
         try
@@ -104,7 +104,7 @@ public static class ConfigHelpers
                 }
                 else
                 {
-                    string msg = "Could not migrate legacy AutoRefreshInterval setting. Using defaults.";
+                    const string msg = "Could not migrate legacy AutoRefreshInterval setting. Using defaults.";
                     _log.Warn(msg);
                     WriteBootstrapFallback(msg);
                 }

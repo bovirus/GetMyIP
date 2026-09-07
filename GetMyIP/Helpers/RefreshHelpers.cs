@@ -24,7 +24,7 @@ internal static class RefreshHelpers
     /// </summary>
     public static void StartTimer()
     {
-        int intervalSeconds = UserSettings.Setting!.AutoRefreshSeconds;
+        int intervalSeconds = UserSettings.Setting.AutoRefreshSeconds;
         intervalSeconds = VerifyRefreshInterval(intervalSeconds);
         TimeSpan interval = TimeSpan.FromSeconds(intervalSeconds);
         _refreshTimer ??= new System.Timers.Timer()
@@ -146,7 +146,7 @@ internal static class RefreshHelpers
     /// </summary>
     public static void HandleRefreshIntervalChanged()
     {
-        int refreshSeconds = (UserSettings.Setting!.RefreshHours * 3600) + (UserSettings.Setting.RefreshMinutes * 60) + UserSettings.Setting.RefreshSeconds;
+        int refreshSeconds = (UserSettings.Setting.RefreshHours * 3600) + (UserSettings.Setting.RefreshMinutes * 60) + UserSettings.Setting.RefreshSeconds;
         int autoRefreshSeconds = VerifyRefreshInterval(refreshSeconds);
         UserSettings.Setting.AutoRefreshSeconds = autoRefreshSeconds;
         SettingsViewModel.UpdateRefresh();
@@ -165,7 +165,7 @@ internal static class RefreshHelpers
         {
             _log.Warn($"Invalid refresh interval ({intervalSeconds} seconds). Must be between {MinRefreshSeconds} sec and {MaxRefreshSeconds} sec. Reverting to one hour.");
             var defaultTime = TimeSpan.FromSeconds(DefaultRefreshSeconds);
-            UserSettings.Setting!.RefreshHours = defaultTime.Hours;
+            UserSettings.Setting.RefreshHours = defaultTime.Hours;
             UserSettings.Setting.RefreshMinutes = defaultTime.Minutes;
             UserSettings.Setting.RefreshSeconds = defaultTime.Seconds;
             intervalSeconds = DefaultRefreshSeconds;

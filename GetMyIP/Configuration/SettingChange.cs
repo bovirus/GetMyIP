@@ -29,7 +29,7 @@ public static class SettingChange
             case nameof(UserSettings.Setting.LogFile):
                 using (FileTarget? nLogTarget = LogManager.Configuration!.FindTargetByName("logPerm") as FileTarget)
                 {
-                    nLogTarget!.FileName = UserSettings.Setting!.LogFile;
+                    nLogTarget!.FileName = UserSettings.Setting.LogFile;
                 }
                 LogManager.ReconfigExistingLoggers();
                 break;
@@ -47,7 +47,7 @@ public static class SettingChange
                 break;
 
             case nameof(UserSettings.Setting.UISize):
-                MainWindowHelpers.UIScale(UserSettings.Setting!.UISize);
+                MainWindowHelpers.UIScale(UserSettings.Setting.UISize);
                 break;
 
             case nameof(UserSettings.Setting.UILanguage):

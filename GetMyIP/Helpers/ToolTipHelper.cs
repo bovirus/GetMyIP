@@ -13,7 +13,7 @@ internal static class ToolTipHelper
         StringBuilder sb = new();
         bool isValid = true;
 
-        if (UserSettings.Setting!.ShowHeader && !string.IsNullOrEmpty(UserSettings.Setting.TooltipHeading))
+        if (UserSettings.Setting.ShowHeader && !string.IsNullOrEmpty(UserSettings.Setting.TooltipHeading))
         {
             string version = Assembly.GetExecutingAssembly().GetName().Version?.ToString(3)!;
             if (UserSettings.Setting.TooltipHeading.Contains("%ver-nl%"))

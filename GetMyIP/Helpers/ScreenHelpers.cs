@@ -19,7 +19,7 @@ internal static class ScreenHelpers
             return;
         }
 
-        PresentationSource source = PresentationSource.FromVisual(window)!;
+        PresentationSource source = PresentationSource.FromVisual(window);
         double dpiScale = source.CompositionTarget?.TransformFromDevice.M11 ?? 1.0;
 
         IntPtr hwnd = new WindowInteropHelper(window).Handle;
@@ -37,7 +37,7 @@ internal static class ScreenHelpers
     /// </summary>
     public static void KeepWindowOnScreen(Window? window)
     {
-        if (window is null || (UserSettings.Setting!.RestoreToCenter && UserSettings.Setting.StartCentered))
+        if (window is null || (UserSettings.Setting.RestoreToCenter && UserSettings.Setting.StartCentered))
         {
             return;
         }
