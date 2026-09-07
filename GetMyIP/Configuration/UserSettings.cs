@@ -215,6 +215,12 @@ public partial class UserSettings : ConfigManager<UserSettings>
     private bool _showCity;
 
     /// <summary>
+    /// Option to show Copy Icon in cell.
+    /// </summary>
+    [ObservableProperty]
+    private bool _showCopyIcon;
+
+    /// <summary>
     /// Option to show Country in results.
     /// </summary>
     [ObservableProperty]

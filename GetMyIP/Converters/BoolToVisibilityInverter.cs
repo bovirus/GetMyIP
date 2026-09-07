@@ -1,0 +1,20 @@
+﻿// Copyright (c) Tim Kennedy. All Rights Reserved. Licensed under the MIT License.
+
+namespace GetMyIP.Converters;
+
+/// <summary>
+/// An inverse bool to visibility converter
+/// </summary>
+/// <seealso cref="System.Windows.Data.IValueConverter" />
+internal sealed class BoolToVisibilityInverter : IValueConverter
+{
+    public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        return (bool)value! ? Visibility.Collapsed : Visibility.Visible;
+    }
+
+    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        return Binding.DoNothing;
+    }
+}

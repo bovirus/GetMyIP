@@ -315,13 +315,6 @@
                     BorderThickness="1.5,1,0,0">
                 <ContentControl Content="{Binding CurrentViewModel}" />
             </Border>
-
-            <bh:Interaction.Triggers>
-                <bh:EventTrigger EventName="MouseRightButtonUp">
-                    <bh:InvokeCommandAction Command="{Binding RightMouseUpCommand}"
-                                            PassEventArgsToCommand="True" />
-                </bh:EventTrigger>
-            </bh:Interaction.Triggers>
         </Grid>
         <!--#endregion-->
 
