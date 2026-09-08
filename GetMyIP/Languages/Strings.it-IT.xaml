@@ -14,7 +14,7 @@
 
         Translation contributed by:  RB
 
-        Date last updated:           06.09.2026
+        Date last updated:           08.09.2026
 
         =======================================================================
 
@@ -285,6 +285,7 @@
     <sys:String x:Key="SettingsItem_ShowAsNumber">Visualizza numero SA</sys:String>
     <sys:String x:Key="SettingsItem_ShowCity">Visualizza città</sys:String>
     <sys:String x:Key="SettingsItem_ShowCountry">Visualizza nazione</sys:String>
+    <sys:String x:Key="SettingsItem_ShowCopyIcon">Visualizza icona Copia accanto alle righe esterne e interne</sys:String>
     <sys:String x:Key="SettingsItem_ShowCustomHeader">Visualizza intestazione personalizzata</sys:String>
     <sys:String x:Key="SettingsItem_ShowCustomHeaderHint">Intestazione personalizzata</sys:String>
     <sys:String x:Key="SettingsItem_ShowExit">Visualizza 'Esci' nella barra navigazione</sys:String>
@@ -677,4 +678,8 @@
     <!-- A | SettingsItem_RefreshIntervalSecondsSuffix -->
     <!-- A | SettingsItem_TimeSpinnerToolTipLine1 -->
     <!-- End of changes on 2026/09/05 @ 00:00 UTC -->
+    
+    <!-- Begin changes on 2026/09/07 @ 00:00 UTC -->
+    <!-- A | SettingsItem_ShowCopyIcon -->
+    <!-- End of changes on 2026/09/07 @ 00:00 UTC -->
 </ResourceDictionary>
