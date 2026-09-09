@@ -14,7 +14,7 @@
 
         Translation contributed by:  RB
 
-        Date last updated:           08.09.2026
+        Date last updated:           09.09.2026
 
         =======================================================================
 
@@ -235,7 +235,7 @@
     <sys:String x:Key="SettingsItem_AccentColor">Colore evidenziazione</sys:String>
     <sys:String x:Key="SettingsItem_AutoUpdateCheck">All'apertura pagina controlla disponibilità nuove versioni</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">La modifica della lingua della UI causerà il riavvio dell'applicazione!</sys:String>
-    <sys:String x:Key="SettingsItem_DarkModeTheme">Tema scuro</sys:String>
+    <sys:String x:Key="SettingsItem_DarkModeTheme">Tema modo scuro</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Font visualizzazione</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFontSize">Dimensione font</sys:String>
     <sys:String x:Key="SettingsItem_EditSettingsWarning">Qualsiasi modifica apportata al file delle impostazioni mentre l'app è in esecuzione verrà sovrascritta!</sys:String>
@@ -246,7 +246,7 @@
     <sys:String x:Key="SettingsItem_EnableRefreshTooltipLine2">dell'indirizzo esterno Get My IP con l'intervallo specificato di seguito.</sys:String>
     <sys:String x:Key="SettingsItem_EnableTrayIcon">Riduci ad icona nella barra applicazioni e abilita icona barra applicazioni</sys:String>
     <sys:String x:Key="SettingsItem_HttpWarning">Questo provider usa HTTP anziché HTTPS, i dati trasmessi non sono crittografati.</sys:String>
-    <sys:String x:Key="SettingsItem_IncludeDebug">Include messaggi livello debug file registro eventi</sys:String>
+    <sys:String x:Key="SettingsItem_IncludeDebug">Nel file registro eventi includi messaggi livello debug</sys:String>
     <sys:String x:Key="SettingsItem_IncludeIPV6">Includi indirizzi iPv6 interni</sys:String>
     <sys:String x:Key="SettingsItem_InitialPage">Pagina iniziale visualizzata</sys:String>
     <sys:String x:Key="SettingsItem_IPv6RetryMax">Numero massimo di tentativi</sys:String>
@@ -300,8 +300,8 @@
     <sys:String x:Key="SettingsItem_ShowState">Visualizza stato</sys:String>
     <sys:String x:Key="SettingsItem_ShowTimeZone">Visualizza fuso orario</sys:String>
     <sys:String x:Key="SettingsItem_ShowUTCOffset">Visualizza offset da UTC (GMT)</sys:String>
-    <sys:String x:Key="SettingsItem_SnackbarAccentColor">Usa colore acceso per lo sfondo del messaggio</sys:String>
-    <sys:String x:Key="SettingsItem_StartCentered">Avvia  con la finestra centrata sullo schermo</sys:String>
+    <sys:String x:Key="SettingsItem_SnackbarAccentColor">Per lo sfondo del messaggio usa un colore acceso </sys:String>
+    <sys:String x:Key="SettingsItem_StartCentered">Avvia con la finestra centrata sullo schermo</sys:String>
     <sys:String x:Key="SettingsItem_StartMinimized">Avvia minimizzato</sys:String>
     <sys:String x:Key="SettingsItem_StartupDelaySecs">Ritardo iniziale (secondi)</sys:String>
     <sys:String x:Key="SettingsItem_StartupDelayTooltip">Numero di secondi di attesa dopo l'avvio dell'app prima di recuperare le informazioni IP. Un valore zero significa nessun ritardo. 600 è il valore massimo.</sys:String>
@@ -309,7 +309,7 @@
     <sys:String x:Key="SettingsItem_Theme">Tema</sys:String>
     <sys:String x:Key="SettingsItem_TimeSpinnerToolTipLine1">Seleziona un intervallo aggiornamento tra 00:00:10 e 23:59:59</sys:String>
     <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Rappresenta il numero di stringhe nella lingua attuale rispetto a quella predefinita (en-US).</sys:String>
-    <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Premi Ctrl+Maiusc+K per confrontare i file lingua. I risultati verranno scritti nel file registro.</sys:String>
+    <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Premi 'Ctrl+Maiusc+K' per confrontare i file lingua. I risultati verranno scritti nel file registro.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Dimensione UI</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageCheckBox">Usa la stessa lingua di sistema di Windows</sys:String>
     <sys:String x:Key="SettingsItem_UseOSLanguageToolTipLine1">Con questa opzione selezionata, verrà usata per il programma la lingua specificata nelle impostazioni di Windows,</sys:String>
@@ -336,10 +336,10 @@
     <sys:String x:Key="SettingsEnum_AccentColor_Teal">Verde acqua</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_White">Bianco</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Yellow">Giallo</sys:String>
-    <sys:String x:Key="SettingsEnum_MapProvider_Bing">Mappe Bing</sys:String>
-    <sys:String x:Key="SettingsEnum_MapProvider_Google">Mappe Google</sys:String>
+    <sys:String x:Key="SettingsEnum_MapProvider_Bing">Bing</sys:String>
+    <sys:String x:Key="SettingsEnum_MapProvider_Google">Google</sys:String>
     <sys:String x:Key="SettingsEnum_MapProvider_LatLong">LatLong.net</sys:String>
-    <sys:String x:Key="SettingsEnum_MapProvider_OSM">Mappa Open Street</sys:String>
+    <sys:String x:Key="SettingsEnum_MapProvider_OSM">Open Street</sys:String>
     <sys:String x:Key="SettingsEnum_Navigation_About">Info programma</sys:String>
     <sys:String x:Key="SettingsEnum_Navigation_External">IP esterno</sys:String>
     <sys:String x:Key="SettingsEnum_Navigation_Internal">IP interno</sys:String>
