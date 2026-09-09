@@ -383,16 +383,37 @@
                                                     Source={x:Static config:UserSettings.Setting},
                                                     Converter={StaticResource EnumToVisibility},
                                                     ConverterParameter={x:Static models:ThemeType.System}}" />
-                        <ComboBox Grid.Row="1" Grid.Column="2"
-                                  ItemsSource="{Binding SystemThemeTypes}"
-                                  SelectedItem="{Binding SystemLightTheme,
-                                                         Source={x:Static config:UserSettings.Setting}}"
-                                  Style="{StaticResource SettingsComboBox}"
-                                  Visibility="{Binding UITheme,
-                                                       Source={x:Static config:UserSettings.Setting},
-                                                       Converter={StaticResource EnumToVisibility},
-                                                       ConverterParameter={x:Static models:ThemeType.System}}" />
-
+                        <StackPanel Grid.Row="1" Grid.Column="2"
+                                    Orientation="Horizontal"
+                                    Visibility="{Binding UITheme,
+                                                         Source={x:Static config:UserSettings.Setting},
+                                                         Converter={StaticResource EnumToVisibility},
+                                                         ConverterParameter={x:Static models:ThemeType.System}}">
+                            <ComboBox ItemsSource="{Binding SystemThemeTypes}"
+                                      SelectedItem="{Binding SystemLightTheme,
+                                                             Source={x:Static config:UserSettings.Setting}}"
+                                      Style="{StaticResource SettingsComboBox}"
+                                      Visibility="{Binding UITheme,
+                                                           Source={x:Static config:UserSettings.Setting},
+                                                           Converter={StaticResource EnumToVisibility},
+                                                           ConverterParameter={x:Static models:ThemeType.System}}" />
+                            <TextBlock ToolTipService.HorizontalOffset="-250"
+                                       ToolTipService.InitialShowDelay="300"
+                                       ToolTipService.Placement="Top"
+                                       Visibility="{Binding UITheme,
+                                                            Source={x:Static config:UserSettings.Setting},
+                                                            Converter={StaticResource EnumToVisibility},
+                                                            ConverterParameter={x:Static models:ThemeType.System}}">
+                                <TextBlock.ToolTip>
+                                    <TextBlock FontSize="14" FontWeight="SemiBold"
+                                               Text="{DynamicResource SettingsItem_ThemeLightToolTip}" />
+                                </TextBlock.ToolTip>
+                                <materialDesign:PackIcon Width="20" Height="20"
+                                                         Margin="15,8,0,0"
+                                                         Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
+                                                         Kind="InfoOutline" Opacity=".8" />
+                            </TextBlock>
+                        </StackPanel>
                         <Label Grid.Row="2" Grid.Column="0"
                                VerticalAlignment="Center"
                                Content="{DynamicResource SettingsItem_DarkModeTheme}"
@@ -400,6 +421,37 @@
                                                     Source={x:Static config:UserSettings.Setting},
                                                     Converter={StaticResource EnumToVisibility},
                                                     ConverterParameter={x:Static models:ThemeType.System}}" />
+                        <StackPanel Grid.Row="2" Grid.Column="2"
+                                    Orientation="Horizontal"
+                                    Visibility="{Binding UITheme,
+                                                         Source={x:Static config:UserSettings.Setting},
+                                                         Converter={StaticResource EnumToVisibility},
+                                                         ConverterParameter={x:Static models:ThemeType.System}}">
+                            <ComboBox ItemsSource="{Binding SystemThemeTypes}"
+                                      SelectedItem="{Binding SystemDarkTheme,
+                                                             Source={x:Static config:UserSettings.Setting}}"
+                                      Style="{StaticResource SettingsComboBox}"
+                                      Visibility="{Binding UITheme,
+                                                           Source={x:Static config:UserSettings.Setting},
+                                                           Converter={StaticResource EnumToVisibility},
+                                                           ConverterParameter={x:Static models:ThemeType.System}}" />
+                            <TextBlock ToolTipService.HorizontalOffset="-250"
+                                       ToolTipService.InitialShowDelay="300"
+                                       ToolTipService.Placement="Top"
+                                       Visibility="{Binding UITheme,
+                                                            Source={x:Static config:UserSettings.Setting},
+                                                            Converter={StaticResource EnumToVisibility},
+                                                            ConverterParameter={x:Static models:ThemeType.System}}">
+                                <TextBlock.ToolTip>
+                                    <TextBlock FontSize="14" FontWeight="SemiBold"
+                                               Text="{DynamicResource SettingsItem_ThemeDarkToolTip}" />
+                                </TextBlock.ToolTip>
+                                <materialDesign:PackIcon Width="20" Height="20"
+                                                         Margin="15,8,0,0"
+                                                         Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
+                                                         Kind="InfoOutline" Opacity=".8" />
+                            </TextBlock>
+                        </StackPanel>
                         <ComboBox Grid.Row="2" Grid.Column="2"
                                   ItemsSource="{Binding SystemThemeTypes}"
                                   SelectedItem="{Binding SystemDarkTheme,
