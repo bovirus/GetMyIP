@@ -14,7 +14,7 @@
 
         Translation contributed by:  uDEV2019, Copilot App
 
-        Date last updated:           2026-08-24
+        Date last updated:           2026-09-09
 
         =======================================================================
 
@@ -202,6 +202,8 @@
     <sys:String x:Key="MsgText_WindowsStartupAdded">Get My IP wird nun mit Windows gestartet.</sys:String>
     <sys:String x:Key="MsgText_WindowsStartupRemoved">Get My IP wird nun nicht mehr mit Windows gestartet.</sys:String>
     <sys:String x:Key="MsgText_WindowTitleAdministrator">Administrator</sys:String>
+    <sys:String x:Key="MsgText_RefreshIntervalReverted">Aktualisierungsintervall auf Standard zurückgesetzt</sys:String>
+    <sys:String x:Key="MsgText_Error_InvalidRefreshInterval">Das Aktualisierungsintervall muss zwischen {0} und {1} liegen.</sys:String>
     <!--  Navigation Items  -->
     <sys:String x:Key="NavItem_About">Über</sys:String>
     <sys:String x:Key="NavItem_Exit">Beenden</sys:String>
@@ -233,15 +235,15 @@
     <sys:String x:Key="SettingsItem_AccentColor">Akzentfarbe</sys:String>
     <sys:String x:Key="SettingsItem_AutoUpdateCheck">Automatisch auf neue Version prüfen, wenn der Über-Dialog geöffnet ist</sys:String>
     <sys:String x:Key="SettingsItem_ChangingLanguageWarning">Das Ändern der Sprache wird die Anwendnung neu starten!</sys:String>
+    <sys:String x:Key="SettingsItem_DarkModeTheme">Design für dunklen Modus</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFont">Schriftart</sys:String>
     <sys:String x:Key="SettingsItem_DisplayFontSize">Schriftgröße</sys:String>
-    <sys:String x:Key="SettingsItem_DarkModeTheme">Design für dunklen Modus</sys:String>
     <sys:String x:Key="SettingsItem_EditSettingsWarning">Alle Änderungen an der Einstellungsdatei, während die App ausgeführt wird, werden überschrieben!</sys:String>
+    <sys:String x:Key="SettingsItem_EnableIPv6Retry">Wiederholen, wenn der Anbieter eine externe IPv6-Adresse zurückgibt</sys:String>
     <sys:String x:Key="SettingsItem_EnableLanguageTesting">Sprachvorschaumodus aktivieren</sys:String>
     <sys:String x:Key="SettingsItem_EnableRefresh">Automatische Aktualisierung aktivieren</sys:String>
     <sys:String x:Key="SettingsItem_EnableRefreshTooltipLine1">Wenn Sie die automatische Aktualisierung aktivieren, wird Get My IP</sys:String>
     <sys:String x:Key="SettingsItem_EnableRefreshTooltipLine2">externe IP-Informationen in dem unten angegebenen Intervall aktualisieren.</sys:String>
-    <sys:String x:Key="SettingsItem_EnableIPv6Retry">Wiederholen, wenn der Anbieter eine externe IPv6-Adresse zurückgibt</sys:String>
     <sys:String x:Key="SettingsItem_EnableTrayIcon">In Infobereich minimieren</sys:String>
     <sys:String x:Key="SettingsItem_HttpWarning">Dieser Anbieter verwendet HTTP anstelle von HTTPS, übertragene Daten werden nicht verschlüsselt.</sys:String>
     <sys:String x:Key="SettingsItem_IncludeDebug">Fehlermeldungen in die Protokolldatei einbeziehen</sys:String>
@@ -251,8 +253,8 @@
     <sys:String x:Key="SettingsItem_IPv6RetrySeconds">Anzahl der Sekunden zwischen Wiederholungsversuchen</sys:String>
     <sys:String x:Key="SettingsItem_KeepOnTop">Immer im Vordergrund anzeigen</sys:String>
     <sys:String x:Key="SettingsItem_KeepWindowOnScreen">Neupositionierung außerhalb des Bildschirms</sys:String>
-    <sys:String x:Key="SettingsItem_LastRefresh">Letzte Aktualisierung:  </sys:String>
     <sys:String x:Key="SettingsItem_Language">Sprache</sys:String>
+    <sys:String x:Key="SettingsItem_LastRefresh">Letzte Aktualisierung:  </sys:String>
     <sys:String x:Key="SettingsItem_LightModeTheme">Design für den hellen Modus</sys:String>
     <sys:String x:Key="SettingsItem_MapProvider">Kartenanbieter</sys:String>
     <sys:String x:Key="SettingsItem_MinimizeNotClose">Anstelle von schließen, in den Infobereich minieren</sys:String>
@@ -268,6 +270,9 @@
     <sys:String x:Key="SettingsItem_PublicInfoProviderTooltipLine3">freeipapi.com liefert einige unterschiedliche Details</sys:String>
     <sys:String x:Key="SettingsItem_PublicInfoProviderTooltipLine4">ip2location.io liefert einige unterschiedliche Details</sys:String>
     <sys:String x:Key="SettingsItem_RefreshInterval">Intervall aktualisieren</sys:String>
+    <sys:String x:Key="SettingsItem_RefreshIntervalHoursSuffix">h</sys:String>
+    <sys:String x:Key="SettingsItem_RefreshIntervalMinutesSuffix">m</sys:String>
+    <sys:String x:Key="SettingsItem_RefreshIntervalSecondsSuffix">s</sys:String>
     <sys:String x:Key="SettingsItem_RefreshRestoredWindow">Aktualisieren der IP-Informationen, wenn das minimierte Fenster wiederhergestellt wurde</sys:String>
     <sys:String x:Key="SettingsItem_RestoreToCenter">Das minimierte Fenster in der Mitte des Bildschirms wiederherstellen</sys:String>
     <sys:String x:Key="SettingsItem_RestoreToInitialPage">Das minimierte Fenster auf der initialen Seite wiederherstellen</sys:String>
@@ -279,12 +284,13 @@
     <sys:String x:Key="SettingsItem_ShowAsName">Als Name anzeigen</sys:String>
     <sys:String x:Key="SettingsItem_ShowAsNumber">Als Nummer anzeigen</sys:String>
     <sys:String x:Key="SettingsItem_ShowCity">Stadt anzeigen</sys:String>
+    <sys:String x:Key="SettingsItem_ShowCopyIcon">Kopiersymbol neben externen und internen Zeilen anzeigen</sys:String>
     <sys:String x:Key="SettingsItem_ShowCountry">Land anzeigen</sys:String>
     <sys:String x:Key="SettingsItem_ShowCustomHeader">Benutzerdefinierte Kopzeile anzeigen</sys:String>
     <sys:String x:Key="SettingsItem_ShowCustomHeaderHint">Benutzerdefinierter Kopfzeilentext</sys:String>
-    <sys:String x:Key="SettingsItem_ShowFlag">Landesflagge als Symbol anstelle des Appsymbols in der Trayleiste anzeigen</sys:String>
     <sys:String x:Key="SettingsItem_ShowExit">Beenden in der Navigationsleiste anzeigen</sys:String>
     <sys:String x:Key="SettingsItem_ShowExternal">Externe (öffentliche) Adresse anzeigen</sys:String>
+    <sys:String x:Key="SettingsItem_ShowFlag">Landesflagge als Symbol anstelle des Appsymbols in der Trayleiste anzeigen</sys:String>
     <sys:String x:Key="SettingsItem_ShowInternalIPv4">Interne IPv4-Adresse anzeigen</sys:String>
     <sys:String x:Key="SettingsItem_ShowInternalIPv6">Interne IPv6-Adresse anzeigen</sys:String>
     <sys:String x:Key="SettingsItem_ShowIpVersion">IP-Version anzeigen</sys:String>
@@ -301,6 +307,9 @@
     <sys:String x:Key="SettingsItem_StartupDelayTooltip">Anzahl der Sekunden, bevor IP-Informationen abgerufen werden, nachdem die App gestartet wurde. Ein Wert von Null bedeutet keine Verzögerung. 600 ist der Höchstwert.</sys:String>
     <sys:String x:Key="SettingsItem_StartWithWindows">Mit Windows starten</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Thema</sys:String>
+    <sys:String x:Key="SettingsItem_ThemeDarkToolTip">Wenn das Thema auf System eingestellt ist, ist dies das Thema, das verwendet wird, wenn das System im Dunkelmodus ist.</sys:String>
+    <sys:String x:Key="SettingsItem_ThemeLightToolTip">Wenn das Thema auf System eingestellt ist, ist dies das Thema, das verwendet wird, wenn das System im Hellmodus ist.</sys:String>
+    <sys:String x:Key="SettingsItem_TimeSpinnerToolTipLine1">Wählen Sie ein Aktualisierungsintervall von 00:00:10 bis 23:59:59</sys:String>
     <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Repräsentiert die Anzahl der Zeichenfolgen in der aktuellen Sprache im Vergleich zum Standard (en-US).</sys:String>
     <sys:String x:Key="SettingsItem_TranslationToolTipLine2">Drücken Sie Strg+Shift+K oder klicken Sie auf die Schaltfläche Vergleichen, um Sprachdateien zu vergleichen. Die Ergebnisse werden in die Protokolldatei geschrieben.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">UI-Größe</sys:String>
@@ -329,10 +338,10 @@
     <sys:String x:Key="SettingsEnum_AccentColor_Teal">Blaugrün</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_White">Weiß</sys:String>
     <sys:String x:Key="SettingsEnum_AccentColor_Yellow">Gelb</sys:String>
-    <sys:String x:Key="SettingsEnum_MapProvider_Bing">Bing Maps</sys:String>
-    <sys:String x:Key="SettingsEnum_MapProvider_Google">Google Maps</sys:String>
+    <sys:String x:Key="SettingsEnum_MapProvider_Bing">Bing</sys:String>
+    <sys:String x:Key="SettingsEnum_MapProvider_Google">Google</sys:String>
     <sys:String x:Key="SettingsEnum_MapProvider_LatLong">LatLong.net</sys:String>
-    <sys:String x:Key="SettingsEnum_MapProvider_OSM">Open Street Map</sys:String>
+    <sys:String x:Key="SettingsEnum_MapProvider_OSM">OpenStreetMap</sys:String>
     <sys:String x:Key="SettingsEnum_Navigation_About">Über</sys:String>
     <sys:String x:Key="SettingsEnum_Navigation_External">Extern</sys:String>
     <sys:String x:Key="SettingsEnum_Navigation_Internal">Intern</sys:String>
@@ -341,20 +350,6 @@
     <sys:String x:Key="SettingsEnum_Provider_IpApiCom">ip-api.com</sys:String>
     <sys:String x:Key="SettingsEnum_Provider_FreeIpApi">freeipapi.com</sys:String>
     <sys:String x:Key="SettingsEnum_Provider_SeeIp">seeip.org</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_1Minute">1 Minute</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_3Minutes">3 Minuten</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_5Minutes">5 Minuten</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_10Minutes">10 Minuten</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_15Minutes">15 Minuten</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_30Minutes">30 Minuten</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_1Hour">1 Stunde</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_2Hours">2 Stunden</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_3Hours">3 Stunden</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_4Hours">4 Stunden</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_6Hours">6 Stunden</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_8Hours">8 Stunden</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_12Hours">12 Stunden</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_24Hours">24 Stunden</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Default">100%</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Large">105%</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Larger">110%</sys:String>
