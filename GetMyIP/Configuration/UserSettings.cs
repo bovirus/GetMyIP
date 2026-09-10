@@ -43,7 +43,7 @@ public partial class UserSettings : ConfigManager<UserSettings>
     /// The External IP information provider.
     /// </summary>
     [ObservableProperty]
-    private PublicInfoProvider _infoProvider = PublicInfoProvider.IpApiCom;
+    private PublicInfoProvider _infoProvider = PublicInfoProvider.SeeIP;
 
     /// <summary>
     /// Delay before fetching external IP info
