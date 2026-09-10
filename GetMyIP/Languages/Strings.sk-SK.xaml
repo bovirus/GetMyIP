@@ -14,7 +14,7 @@
 
         Translation contributed by:  VAIO, Copilot App
 
-        Date last updated:           24.08.2026
+        Date last updated:           09.09.2026
 
         =======================================================================
 
@@ -152,6 +152,7 @@
     <sys:String x:Key="MsgText_Error_FileNotFound">Názov súboru chýba alebo sa súbor nenašiel.</sys:String>
     <sys:String x:Key="MsgText_Error_ImportingSettings">Chyba pri importovaní súboru nastavení.</sys:String>
     <sys:String x:Key="MsgText_Error_InternetNotFound">Nenašlo sa internetové pripojenie.</sys:String>
+    <sys:String x:Key="MsgText_Error_InvalidRefreshInterval">Interval obnovenia musí byť medzi {0} a {1}.</sys:String>
     <sys:String x:Key="MsgText_Error_InvalidURL">Adresa URL použitá na získanie informácií o externej adrese IP je neplatná.</sys:String>
     <sys:String x:Key="MsgText_Error_IPv6Received">Adresa IPv6 ({0}) bola prijatá, zatiaľ čo je povolená možnosť opakovania IPv6.</sys:String>
     <sys:String x:Key="MsgText_Error_IPv6RetryMaxLine1">Dosiahol sa maximálny počet pokusov opakovania IPv6 ({0}).</sys:String>
@@ -188,6 +189,7 @@
     <sys:String x:Key="MsgText_PeriodicRefreshStarted">Periodické obnovenie začalo</sys:String>
     <sys:String x:Key="MsgText_PeriodicRefreshStopped">Periodické obnovenie bolo zastavené</sys:String>
     <sys:String x:Key="MsgText_Refreshed">Obnovené</sys:String>
+    <sys:String x:Key="MsgText_RefreshIntervalReverted">Interval obnovenia bol vrátený na predvolenú hodnotu</sys:String>
     <sys:String x:Key="MsgText_RetryAttempt">Opakovanie za {0} sekúnd. ({1} z {2})</sys:String>
     <sys:String x:Key="MsgText_TooltipBytes">bajty</sys:String>
     <sys:String x:Key="MsgText_TooltipLastUpdate">Aktualizované:</sys:String>
@@ -269,6 +271,9 @@
     <sys:String x:Key="SettingsItem_PublicInfoProviderTooltipLine3">freeipapi.com poskytuje niektoré iné podrobnosti</sys:String>
     <sys:String x:Key="SettingsItem_PublicInfoProviderTooltipLine4">ip2location.io poskytuje niektoré iné podrobnosti</sys:String>
     <sys:String x:Key="SettingsItem_RefreshInterval">Interval obnovenia</sys:String>
+    <sys:String x:Key="SettingsItem_RefreshIntervalHoursSuffix">h</sys:String>
+    <sys:String x:Key="SettingsItem_RefreshIntervalMinutesSuffix">m</sys:String>
+    <sys:String x:Key="SettingsItem_RefreshIntervalSecondsSuffix">s</sys:String>
     <sys:String x:Key="SettingsItem_RefreshRestoredWindow">Obnoviť informácie o IP, keď je zmenšené okno obnovené</sys:String>
     <sys:String x:Key="SettingsItem_RestoreToCenter">Obnoviť zmenšené okno na strred obrazovky</sys:String>
     <sys:String x:Key="SettingsItem_RestoreToInitialPage">Obnoviť zmenšené okno na počiatočnú stránku</sys:String>
@@ -280,6 +285,7 @@
     <sys:String x:Key="SettingsItem_ShowAsName">Zobraziť názov AS</sys:String>
     <sys:String x:Key="SettingsItem_ShowAsNumber">Zobraziť číslo AS</sys:String>
     <sys:String x:Key="SettingsItem_ShowCity">Zobraziť mesto</sys:String>
+    <sys:String x:Key="SettingsItem_ShowCopyIcon">Zobraziť ikonu kopírovania vedľa externých a interných riadkov</sys:String>
     <sys:String x:Key="SettingsItem_ShowCountry">Zobraziť krajinu</sys:String>
     <sys:String x:Key="SettingsItem_ShowCustomHeader">Zobraziť vlastnú hlavičku</sys:String>
     <sys:String x:Key="SettingsItem_ShowCustomHeaderHint">Text vlastnej hlavičky</sys:String>
@@ -302,6 +308,9 @@
     <sys:String x:Key="SettingsItem_StartupDelayTooltip">Počet sekúnd, kým sa má počkať po spustení aplikácie pred získaním informácií o IP. Hodnota nula znamená bez oneskorenia. 600 je maximálna hodnota.</sys:String>
     <sys:String x:Key="SettingsItem_StartWithWindows">Spustiť so systémom Windows</sys:String>
     <sys:String x:Key="SettingsItem_Theme">Motív</sys:String>
+    <sys:String x:Key="SettingsItem_ThemeDarkToolTip">Keď je motív nastavený na Systém, toto je motív používaný, keď je systém v tmavom režime.</sys:String>
+    <sys:String x:Key="SettingsItem_ThemeLightToolTip">Keď je motív nastavený na Systém, toto je motív používaný, keď je systém v svetlom režime.</sys:String>
+    <sys:String x:Key="SettingsItem_TimeSpinnerToolTipLine1">Vyberte interval obnovenia od 00:00:10 do 23:59:59</sys:String>
     <sys:String x:Key="SettingsItem_TranslationToolTipLine1">Predstavuje počet reťazcov v aktuálnom jazyku v porovnaní s predvoleným (en-US).</sys:String>
     <sys:String x:Key="SettingsItem_TranslationToolTipLine2" xml:space="preserve">Stlačením Ctrl+Shift+K sa porovnajú súbory jazyka.&#x0a;Výsledky sa zapíšu do súboru denníka.</sys:String>
     <sys:String x:Key="SettingsItem_UISize">Veľkosť používateľského rozhrania</sys:String>
@@ -333,7 +342,7 @@
     <sys:String x:Key="SettingsEnum_MapProvider_Bing">Mapy Bing</sys:String>
     <sys:String x:Key="SettingsEnum_MapProvider_Google">Mapy Google</sys:String>
     <sys:String x:Key="SettingsEnum_MapProvider_LatLong">LatLong.net</sys:String>
-    <sys:String x:Key="SettingsEnum_MapProvider_OSM">Otvorená mapa ulíc (Open Street Map)</sys:String>
+    <sys:String x:Key="SettingsEnum_MapProvider_OSM">Otvorená mapa ulíc (OpenStreetMap)</sys:String>
     <sys:String x:Key="SettingsEnum_Navigation_About">O programe</sys:String>
     <sys:String x:Key="SettingsEnum_Navigation_External">Externé</sys:String>
     <sys:String x:Key="SettingsEnum_Navigation_Internal">Interné</sys:String>
@@ -342,20 +351,6 @@
     <sys:String x:Key="SettingsEnum_Provider_FreeIpApi">freeipapi.com</sys:String>
     <sys:String x:Key="SettingsEnum_Provider_Ip2Location">ip2location.io</sys:String>
     <sys:String x:Key="SettingsEnum_Provider_SeeIp">seeip.org</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_1Hour">1 Hodina</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_1Minute">1 Minúta</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_2Hours">2 Hodiny</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_3Hours">3 Hodiny</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_3Minutes">3 Minúty</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_4Hours">4 Hodiny</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_5Minutes">5 Minút</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_6Hours">6 Hodín</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_8Hours">8 Hodín</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_10Minutes">10 Minút</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_12Hours">12 Hodín</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_15Minutes">15 Minút</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_24Hours">24 Hodín</sys:String>
-    <sys:String x:Key="SettingsEnum_RefreshInterval_30Minutes">30 Minút</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Default">100 %</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Large">105 %</sys:String>
     <sys:String x:Key="SettingsEnum_Size_Larger">110 %</sys:String>
